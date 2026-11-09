@@ -352,5 +352,5 @@ giữ 10 như giáo trình là hợp lý, tăng lên 15–20 cho lợi ích nh�
 
 **B. Sử dụng AI** (đề bài cho phép dùng AI để thảo luận, viết script chạy thí nghiệm, xây dựng bộ dữ liệu test):
 Harness đo (Launcher, backend JMH/fork), bộ sinh dữ liệu, `CheckSort`, script phân tích và bản nháp báo cáo được
-soạn với sự hỗ trợ của AI (Claude). Cài đặt `MergeSort` được ghép từ code trên slide bài giảng. Mọi số liệu được đo
-trên máy của tôi; các nhận định trong báo cáo đã được đối chiếu với số liệu đo.
+soạn với sự hỗ trợ của Claude. Cài đặt `MergeSort` được ghép từ code trên slide bài giảng. Mọi số liệu được đo
+trên máy laptop cá nhân; các nhận định trong báo cáo đã được đối chiếu với số liệu đo.
