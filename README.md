@@ -244,5 +244,3 @@ Mỗi lượt chạy tạo `results/<mode>-<thời gian>/`:
 - Đưa lên GitHub từ Windows: sau `git add .`, chạy
   `git update-index --chmod=+x scripts/build.sh scripts/pilot.sh scripts/run.sh scripts/analyze.sh`
   để giữ quyền thực thi của các script `.sh`.
-#   M e r g e S o r t - C u t o f f - P r o j e c t  
- 
