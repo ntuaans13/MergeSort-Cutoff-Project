@@ -1,0 +1,749 @@
+# JMH version: 1.37
+# VM version: JDK 25.0.1, OpenJDK 64-Bit Server VM, 25.0.1+8-LTS
+# VM invoker: C:\Program Files\Microsoft\jdk-25.0.1.8-hotspot\bin\java.exe
+# VM options: -Xms2g -Xmx2g -XX:+UseParallelGC
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 100 iterations, single-shot each
+# Measurement: 30 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: study.jmh.SortBenchmark.sort
+# Parameters: (cutoff = 40, dataDir = C:\Users\HACOM\Downloads\mergesort-cutoff-lab\data, dataset = random_n10000_s0)
+
+# Run progress: 0.00% complete, ETA 00:00:00
+# Fork: 1 of 5
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/C:/Users/HACOM/Downloads/mergesort-cutoff-lab/target/benchmarks.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: 6912700.000 ns/op
+# Warmup Iteration   2: 4318500.000 ns/op
+# Warmup Iteration   3: 2103300.000 ns/op
+# Warmup Iteration   4: 2104500.000 ns/op
+# Warmup Iteration   5: 4868400.000 ns/op
+# Warmup Iteration   6: 4723800.000 ns/op
+# Warmup Iteration   7: 4925100.000 ns/op
+# Warmup Iteration   8: 4899100.000 ns/op
+# Warmup Iteration   9: 4814100.000 ns/op
+# Warmup Iteration  10: 4821800.000 ns/op
+# Warmup Iteration  11: 4660400.000 ns/op
+# Warmup Iteration  12: 4799500.000 ns/op
+# Warmup Iteration  13: 5110300.000 ns/op
+# Warmup Iteration  14: 1265100.000 ns/op
+# Warmup Iteration  15: 1230100.000 ns/op
+# Warmup Iteration  16: 1336300.000 ns/op
+# Warmup Iteration  17: 1235700.000 ns/op
+# Warmup Iteration  18: 1242200.000 ns/op
+# Warmup Iteration  19: 1267500.000 ns/op
+# Warmup Iteration  20: 1262200.000 ns/op
+# Warmup Iteration  21: 1201000.000 ns/op
+# Warmup Iteration  22: 1266800.000 ns/op
+# Warmup Iteration  23: 1290400.000 ns/op
+# Warmup Iteration  24: 1263800.000 ns/op
+# Warmup Iteration  25: 1218000.000 ns/op
+# Warmup Iteration  26: 1287200.000 ns/op
+# Warmup Iteration  27: 1245300.000 ns/op
+# Warmup Iteration  28: 1189200.000 ns/op
+# Warmup Iteration  29: 1189900.000 ns/op
+# Warmup Iteration  30: 1213400.000 ns/op
+# Warmup Iteration  31: 1254300.000 ns/op
+# Warmup Iteration  32: 1215600.000 ns/op
+# Warmup Iteration  33: 1209500.000 ns/op
+# Warmup Iteration  34: 1243700.000 ns/op
+# Warmup Iteration  35: 1247000.000 ns/op
+# Warmup Iteration  36: 1265900.000 ns/op
+# Warmup Iteration  37: 1244400.000 ns/op
+# Warmup Iteration  38: 1212700.000 ns/op
+# Warmup Iteration  39: 1215900.000 ns/op
+# Warmup Iteration  40: 1244200.000 ns/op
+# Warmup Iteration  41: 1221100.000 ns/op
+# Warmup Iteration  42: 1247200.000 ns/op
+# Warmup Iteration  43: 1237100.000 ns/op
+# Warmup Iteration  44: 1187600.000 ns/op
+# Warmup Iteration  45: 1250600.000 ns/op
+# Warmup Iteration  46: 1831100.000 ns/op
+# Warmup Iteration  47: 1945800.000 ns/op
+# Warmup Iteration  48: 1276900.000 ns/op
+# Warmup Iteration  49: 1227100.000 ns/op
+# Warmup Iteration  50: 1274800.000 ns/op
+# Warmup Iteration  51: 1204200.000 ns/op
+# Warmup Iteration  52: 1285300.000 ns/op
+# Warmup Iteration  53: 2016000.000 ns/op
+# Warmup Iteration  54: 1418800.000 ns/op
+# Warmup Iteration  55: 1294900.000 ns/op
+# Warmup Iteration  56: 1276700.000 ns/op
+# Warmup Iteration  57: 1343200.000 ns/op
+# Warmup Iteration  58: 1295700.000 ns/op
+# Warmup Iteration  59: 1252300.000 ns/op
+# Warmup Iteration  60: 1284900.000 ns/op
+# Warmup Iteration  61: 1291400.000 ns/op
+# Warmup Iteration  62: 1276900.000 ns/op
+# Warmup Iteration  63: 1313800.000 ns/op
+# Warmup Iteration  64: 1276400.000 ns/op
+# Warmup Iteration  65: 1254200.000 ns/op
+# Warmup Iteration  66: 1273800.000 ns/op
+# Warmup Iteration  67: 1330100.000 ns/op
+# Warmup Iteration  68: 1238300.000 ns/op
+# Warmup Iteration  69: 1229100.000 ns/op
+# Warmup Iteration  70: 1267500.000 ns/op
+# Warmup Iteration  71: 1299900.000 ns/op
+# Warmup Iteration  72: 1248700.000 ns/op
+# Warmup Iteration  73: 1239000.000 ns/op
+# Warmup Iteration  74: 1287000.000 ns/op
+# Warmup Iteration  75: 1271900.000 ns/op
+# Warmup Iteration  76: 1261000.000 ns/op
+# Warmup Iteration  77: 1258500.000 ns/op
+# Warmup Iteration  78: 1242100.000 ns/op
+# Warmup Iteration  79: 1258100.000 ns/op
+# Warmup Iteration  80: 1273900.000 ns/op
+# Warmup Iteration  81: 1258800.000 ns/op
+# Warmup Iteration  82: 1268900.000 ns/op
+# Warmup Iteration  83: 1255600.000 ns/op
+# Warmup Iteration  84: 1249600.000 ns/op
+# Warmup Iteration  85: 1278600.000 ns/op
+# Warmup Iteration  86: 1272300.000 ns/op
+# Warmup Iteration  87: 1267100.000 ns/op
+# Warmup Iteration  88: 1247200.000 ns/op
+# Warmup Iteration  89: 1333500.000 ns/op
+# Warmup Iteration  90: 1282900.000 ns/op
+# Warmup Iteration  91: 1237000.000 ns/op
+# Warmup Iteration  92: 1273100.000 ns/op
+# Warmup Iteration  93: 1268500.000 ns/op
+# Warmup Iteration  94: 1265700.000 ns/op
+# Warmup Iteration  95: 1253400.000 ns/op
+# Warmup Iteration  96: 1251200.000 ns/op
+# Warmup Iteration  97: 1260400.000 ns/op
+# Warmup Iteration  98: 1245700.000 ns/op
+# Warmup Iteration  99: 1265200.000 ns/op
+# Warmup Iteration 100: 1300300.000 ns/op
+Iteration   1: 1230500.000 ns/op
+Iteration   2: 1290400.000 ns/op
+Iteration   3: 1269300.000 ns/op
+Iteration   4: 1286900.000 ns/op
+Iteration   5: 1255700.000 ns/op
+Iteration   6: 1265000.000 ns/op
+Iteration   7: 1276700.000 ns/op
+Iteration   8: 1271700.000 ns/op
+Iteration   9: 1260500.000 ns/op
+Iteration  10: 1274500.000 ns/op
+Iteration  11: 1260600.000 ns/op
+Iteration  12: 1277700.000 ns/op
+Iteration  13: 1297200.000 ns/op
+Iteration  14: 1306500.000 ns/op
+Iteration  15: 1252500.000 ns/op
+Iteration  16: 1275000.000 ns/op
+Iteration  17: 1277500.000 ns/op
+Iteration  18: 1255500.000 ns/op
+Iteration  19: 1278100.000 ns/op
+Iteration  20: 1331300.000 ns/op
+Iteration  21: 1317800.000 ns/op
+Iteration  22: 1259800.000 ns/op
+Iteration  23: 1265400.000 ns/op
+Iteration  24: 1291500.000 ns/op
+Iteration  25: 1270300.000 ns/op
+Iteration  26: 1271300.000 ns/op
+Iteration  27: 1265000.000 ns/op
+Iteration  28: 1306200.000 ns/op
+Iteration  29: 1268100.000 ns/op
+Iteration  30: 1256000.000 ns/op
+
+# Run progress: 20.00% complete, ETA 00:00:01
+# Fork: 2 of 5
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/C:/Users/HACOM/Downloads/mergesort-cutoff-lab/target/benchmarks.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: 6011700.000 ns/op
+# Warmup Iteration   2: 3151400.000 ns/op
+# Warmup Iteration   3: 2078700.000 ns/op
+# Warmup Iteration   4: 2366200.000 ns/op
+# Warmup Iteration   5: 2423500.000 ns/op
+# Warmup Iteration   6: 2091800.000 ns/op
+# Warmup Iteration   7: 2073800.000 ns/op
+# Warmup Iteration   8: 3731200.000 ns/op
+# Warmup Iteration   9: 4946900.000 ns/op
+# Warmup Iteration  10: 4815700.000 ns/op
+# Warmup Iteration  11: 4872400.000 ns/op
+# Warmup Iteration  12: 4826000.000 ns/op
+# Warmup Iteration  13: 6091500.000 ns/op
+# Warmup Iteration  14: 4961700.000 ns/op
+# Warmup Iteration  15: 7067300.000 ns/op
+# Warmup Iteration  16: 2851700.000 ns/op
+# Warmup Iteration  17: 1275500.000 ns/op
+# Warmup Iteration  18: 1226500.000 ns/op
+# Warmup Iteration  19: 1209400.000 ns/op
+# Warmup Iteration  20: 1234200.000 ns/op
+# Warmup Iteration  21: 1237900.000 ns/op
+# Warmup Iteration  22: 1227000.000 ns/op
+# Warmup Iteration  23: 1413500.000 ns/op
+# Warmup Iteration  24: 1215000.000 ns/op
+# Warmup Iteration  25: 1254300.000 ns/op
+# Warmup Iteration  26: 1265500.000 ns/op
+# Warmup Iteration  27: 1225200.000 ns/op
+# Warmup Iteration  28: 1198600.000 ns/op
+# Warmup Iteration  29: 1211700.000 ns/op
+# Warmup Iteration  30: 1196600.000 ns/op
+# Warmup Iteration  31: 1952000.000 ns/op
+# Warmup Iteration  32: 1995100.000 ns/op
+# Warmup Iteration  33: 1226300.000 ns/op
+# Warmup Iteration  34: 1378800.000 ns/op
+# Warmup Iteration  35: 1238000.000 ns/op
+# Warmup Iteration  36: 1199200.000 ns/op
+# Warmup Iteration  37: 1236700.000 ns/op
+# Warmup Iteration  38: 1205600.000 ns/op
+# Warmup Iteration  39: 1319200.000 ns/op
+# Warmup Iteration  40: 1211700.000 ns/op
+# Warmup Iteration  41: 1223200.000 ns/op
+# Warmup Iteration  42: 1242000.000 ns/op
+# Warmup Iteration  43: 1289400.000 ns/op
+# Warmup Iteration  44: 1228700.000 ns/op
+# Warmup Iteration  45: 1346200.000 ns/op
+# Warmup Iteration  46: 1222600.000 ns/op
+# Warmup Iteration  47: 1263000.000 ns/op
+# Warmup Iteration  48: 1747700.000 ns/op
+# Warmup Iteration  49: 1600100.000 ns/op
+# Warmup Iteration  50: 1227600.000 ns/op
+# Warmup Iteration  51: 1201200.000 ns/op
+# Warmup Iteration  52: 1266800.000 ns/op
+# Warmup Iteration  53: 1251600.000 ns/op
+# Warmup Iteration  54: 1211500.000 ns/op
+# Warmup Iteration  55: 1256200.000 ns/op
+# Warmup Iteration  56: 1202700.000 ns/op
+# Warmup Iteration  57: 1214300.000 ns/op
+# Warmup Iteration  58: 1223400.000 ns/op
+# Warmup Iteration  59: 1227500.000 ns/op
+# Warmup Iteration  60: 1230200.000 ns/op
+# Warmup Iteration  61: 1264000.000 ns/op
+# Warmup Iteration  62: 1188500.000 ns/op
+# Warmup Iteration  63: 1237300.000 ns/op
+# Warmup Iteration  64: 1379600.000 ns/op
+# Warmup Iteration  65: 1233700.000 ns/op
+# Warmup Iteration  66: 1195500.000 ns/op
+# Warmup Iteration  67: 1262400.000 ns/op
+# Warmup Iteration  68: 1224500.000 ns/op
+# Warmup Iteration  69: 1197600.000 ns/op
+# Warmup Iteration  70: 1240800.000 ns/op
+# Warmup Iteration  71: 1208400.000 ns/op
+# Warmup Iteration  72: 1224400.000 ns/op
+# Warmup Iteration  73: 1197200.000 ns/op
+# Warmup Iteration  74: 1312000.000 ns/op
+# Warmup Iteration  75: 1203600.000 ns/op
+# Warmup Iteration  76: 1202600.000 ns/op
+# Warmup Iteration  77: 1298700.000 ns/op
+# Warmup Iteration  78: 1193000.000 ns/op
+# Warmup Iteration  79: 1242900.000 ns/op
+# Warmup Iteration  80: 1203400.000 ns/op
+# Warmup Iteration  81: 1206200.000 ns/op
+# Warmup Iteration  82: 1628500.000 ns/op
+# Warmup Iteration  83: 1219400.000 ns/op
+# Warmup Iteration  84: 1277800.000 ns/op
+# Warmup Iteration  85: 1250600.000 ns/op
+# Warmup Iteration  86: 1207900.000 ns/op
+# Warmup Iteration  87: 1321500.000 ns/op
+# Warmup Iteration  88: 1188200.000 ns/op
+# Warmup Iteration  89: 1249900.000 ns/op
+# Warmup Iteration  90: 1204800.000 ns/op
+# Warmup Iteration  91: 1225900.000 ns/op
+# Warmup Iteration  92: 1240400.000 ns/op
+# Warmup Iteration  93: 1251400.000 ns/op
+# Warmup Iteration  94: 1227700.000 ns/op
+# Warmup Iteration  95: 1220100.000 ns/op
+# Warmup Iteration  96: 1208700.000 ns/op
+# Warmup Iteration  97: 1185900.000 ns/op
+# Warmup Iteration  98: 1234600.000 ns/op
+# Warmup Iteration  99: 1755700.000 ns/op
+# Warmup Iteration 100: 1491200.000 ns/op
+Iteration   1: 1213300.000 ns/op
+Iteration   2: 1243300.000 ns/op
+Iteration   3: 1254500.000 ns/op
+Iteration   4: 1235700.000 ns/op
+Iteration   5: 1200500.000 ns/op
+Iteration   6: 1229800.000 ns/op
+Iteration   7: 1218300.000 ns/op
+Iteration   8: 1211400.000 ns/op
+Iteration   9: 1311100.000 ns/op
+Iteration  10: 1220200.000 ns/op
+Iteration  11: 1178200.000 ns/op
+Iteration  12: 1190200.000 ns/op
+Iteration  13: 1486500.000 ns/op
+Iteration  14: 1248000.000 ns/op
+Iteration  15: 1211200.000 ns/op
+Iteration  16: 1215300.000 ns/op
+Iteration  17: 1250800.000 ns/op
+Iteration  18: 1189400.000 ns/op
+Iteration  19: 1212100.000 ns/op
+Iteration  20: 1271700.000 ns/op
+Iteration  21: 1219400.000 ns/op
+Iteration  22: 1415600.000 ns/op
+Iteration  23: 1222400.000 ns/op
+Iteration  24: 1259200.000 ns/op
+Iteration  25: 1216000.000 ns/op
+Iteration  26: 1214000.000 ns/op
+Iteration  27: 1218100.000 ns/op
+Iteration  28: 1272200.000 ns/op
+Iteration  29: 1251100.000 ns/op
+Iteration  30: 1252500.000 ns/op
+
+# Run progress: 40.00% complete, ETA 00:00:01
+# Fork: 3 of 5
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/C:/Users/HACOM/Downloads/mergesort-cutoff-lab/target/benchmarks.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: 7022500.000 ns/op
+# Warmup Iteration   2: 3678300.000 ns/op
+# Warmup Iteration   3: 2029900.000 ns/op
+# Warmup Iteration   4: 2569100.000 ns/op
+# Warmup Iteration   5: 2586100.000 ns/op
+# Warmup Iteration   6: 2072800.000 ns/op
+# Warmup Iteration   7: 2108000.000 ns/op
+# Warmup Iteration   8: 4176600.000 ns/op
+# Warmup Iteration   9: 4818300.000 ns/op
+# Warmup Iteration  10: 4937100.000 ns/op
+# Warmup Iteration  11: 4833500.000 ns/op
+# Warmup Iteration  12: 5003100.000 ns/op
+# Warmup Iteration  13: 5183400.000 ns/op
+# Warmup Iteration  14: 5015700.000 ns/op
+# Warmup Iteration  15: 4937200.000 ns/op
+# Warmup Iteration  16: 3178400.000 ns/op
+# Warmup Iteration  17: 2916700.000 ns/op
+# Warmup Iteration  18: 2883800.000 ns/op
+# Warmup Iteration  19: 2964000.000 ns/op
+# Warmup Iteration  20: 3057500.000 ns/op
+# Warmup Iteration  21: 2471400.000 ns/op
+# Warmup Iteration  22: 1246000.000 ns/op
+# Warmup Iteration  23: 1251200.000 ns/op
+# Warmup Iteration  24: 1256600.000 ns/op
+# Warmup Iteration  25: 1269300.000 ns/op
+# Warmup Iteration  26: 1291000.000 ns/op
+# Warmup Iteration  27: 1239600.000 ns/op
+# Warmup Iteration  28: 1244200.000 ns/op
+# Warmup Iteration  29: 1204300.000 ns/op
+# Warmup Iteration  30: 1239200.000 ns/op
+# Warmup Iteration  31: 1205800.000 ns/op
+# Warmup Iteration  32: 1275300.000 ns/op
+# Warmup Iteration  33: 1232800.000 ns/op
+# Warmup Iteration  34: 1204500.000 ns/op
+# Warmup Iteration  35: 1272100.000 ns/op
+# Warmup Iteration  36: 1278400.000 ns/op
+# Warmup Iteration  37: 1365400.000 ns/op
+# Warmup Iteration  38: 1214800.000 ns/op
+# Warmup Iteration  39: 1241400.000 ns/op
+# Warmup Iteration  40: 1226800.000 ns/op
+# Warmup Iteration  41: 1282400.000 ns/op
+# Warmup Iteration  42: 1238500.000 ns/op
+# Warmup Iteration  43: 1219500.000 ns/op
+# Warmup Iteration  44: 1218000.000 ns/op
+# Warmup Iteration  45: 1570200.000 ns/op
+# Warmup Iteration  46: 1228200.000 ns/op
+# Warmup Iteration  47: 1291200.000 ns/op
+# Warmup Iteration  48: 1212700.000 ns/op
+# Warmup Iteration  49: 1195900.000 ns/op
+# Warmup Iteration  50: 1216900.000 ns/op
+# Warmup Iteration  51: 1218400.000 ns/op
+# Warmup Iteration  52: 1224800.000 ns/op
+# Warmup Iteration  53: 1212100.000 ns/op
+# Warmup Iteration  54: 1224600.000 ns/op
+# Warmup Iteration  55: 1234200.000 ns/op
+# Warmup Iteration  56: 1212400.000 ns/op
+# Warmup Iteration  57: 1199300.000 ns/op
+# Warmup Iteration  58: 1306400.000 ns/op
+# Warmup Iteration  59: 1240800.000 ns/op
+# Warmup Iteration  60: 1267600.000 ns/op
+# Warmup Iteration  61: 1236200.000 ns/op
+# Warmup Iteration  62: 1197500.000 ns/op
+# Warmup Iteration  63: 1289200.000 ns/op
+# Warmup Iteration  64: 1437300.000 ns/op
+# Warmup Iteration  65: 1213100.000 ns/op
+# Warmup Iteration  66: 1235900.000 ns/op
+# Warmup Iteration  67: 1249400.000 ns/op
+# Warmup Iteration  68: 1280200.000 ns/op
+# Warmup Iteration  69: 1267000.000 ns/op
+# Warmup Iteration  70: 1240100.000 ns/op
+# Warmup Iteration  71: 1218500.000 ns/op
+# Warmup Iteration  72: 1229000.000 ns/op
+# Warmup Iteration  73: 1224200.000 ns/op
+# Warmup Iteration  74: 1231500.000 ns/op
+# Warmup Iteration  75: 1270400.000 ns/op
+# Warmup Iteration  76: 1203700.000 ns/op
+# Warmup Iteration  77: 1201400.000 ns/op
+# Warmup Iteration  78: 1226200.000 ns/op
+# Warmup Iteration  79: 1251900.000 ns/op
+# Warmup Iteration  80: 1296700.000 ns/op
+# Warmup Iteration  81: 1258700.000 ns/op
+# Warmup Iteration  82: 1226200.000 ns/op
+# Warmup Iteration  83: 1214200.000 ns/op
+# Warmup Iteration  84: 1235400.000 ns/op
+# Warmup Iteration  85: 1200100.000 ns/op
+# Warmup Iteration  86: 1230700.000 ns/op
+# Warmup Iteration  87: 1218300.000 ns/op
+# Warmup Iteration  88: 1239200.000 ns/op
+# Warmup Iteration  89: 1304800.000 ns/op
+# Warmup Iteration  90: 1215600.000 ns/op
+# Warmup Iteration  91: 1222800.000 ns/op
+# Warmup Iteration  92: 1770500.000 ns/op
+# Warmup Iteration  93: 1267700.000 ns/op
+# Warmup Iteration  94: 1270100.000 ns/op
+# Warmup Iteration  95: 1238400.000 ns/op
+# Warmup Iteration  96: 1248500.000 ns/op
+# Warmup Iteration  97: 1271000.000 ns/op
+# Warmup Iteration  98: 1237000.000 ns/op
+# Warmup Iteration  99: 1191400.000 ns/op
+# Warmup Iteration 100: 1223000.000 ns/op
+Iteration   1: 1223300.000 ns/op
+Iteration   2: 1243700.000 ns/op
+Iteration   3: 1280100.000 ns/op
+Iteration   4: 1205500.000 ns/op
+Iteration   5: 1232000.000 ns/op
+Iteration   6: 1213800.000 ns/op
+Iteration   7: 1210900.000 ns/op
+Iteration   8: 1201600.000 ns/op
+Iteration   9: 1263300.000 ns/op
+Iteration  10: 1239800.000 ns/op
+Iteration  11: 1252000.000 ns/op
+Iteration  12: 1307900.000 ns/op
+Iteration  13: 1212000.000 ns/op
+Iteration  14: 1196100.000 ns/op
+Iteration  15: 1196800.000 ns/op
+Iteration  16: 1186300.000 ns/op
+Iteration  17: 1211200.000 ns/op
+Iteration  18: 1262000.000 ns/op
+Iteration  19: 1258100.000 ns/op
+Iteration  20: 1281000.000 ns/op
+Iteration  21: 1236600.000 ns/op
+Iteration  22: 1221800.000 ns/op
+Iteration  23: 1295800.000 ns/op
+Iteration  24: 1239600.000 ns/op
+Iteration  25: 1243500.000 ns/op
+Iteration  26: 1242400.000 ns/op
+Iteration  27: 1225200.000 ns/op
+Iteration  28: 1225200.000 ns/op
+Iteration  29: 1757800.000 ns/op
+Iteration  30: 1305000.000 ns/op
+
+# Run progress: 60.00% complete, ETA 00:00:00
+# Fork: 4 of 5
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/C:/Users/HACOM/Downloads/mergesort-cutoff-lab/target/benchmarks.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: 6462900.000 ns/op
+# Warmup Iteration   2: 4472000.000 ns/op
+# Warmup Iteration   3: 2283900.000 ns/op
+# Warmup Iteration   4: 2037800.000 ns/op
+# Warmup Iteration   5: 2040000.000 ns/op
+# Warmup Iteration   6: 3519700.000 ns/op
+# Warmup Iteration   7: 5478400.000 ns/op
+# Warmup Iteration   8: 5342800.000 ns/op
+# Warmup Iteration   9: 5521300.000 ns/op
+# Warmup Iteration  10: 4820700.000 ns/op
+# Warmup Iteration  11: 4843200.000 ns/op
+# Warmup Iteration  12: 5104100.000 ns/op
+# Warmup Iteration  13: 3811800.000 ns/op
+# Warmup Iteration  14: 3574800.000 ns/op
+# Warmup Iteration  15: 3560400.000 ns/op
+# Warmup Iteration  16: 3641600.000 ns/op
+# Warmup Iteration  17: 1860300.000 ns/op
+# Warmup Iteration  18: 1224400.000 ns/op
+# Warmup Iteration  19: 1274900.000 ns/op
+# Warmup Iteration  20: 1255800.000 ns/op
+# Warmup Iteration  21: 1240800.000 ns/op
+# Warmup Iteration  22: 1237300.000 ns/op
+# Warmup Iteration  23: 1220800.000 ns/op
+# Warmup Iteration  24: 1257300.000 ns/op
+# Warmup Iteration  25: 1375900.000 ns/op
+# Warmup Iteration  26: 1233800.000 ns/op
+# Warmup Iteration  27: 1244000.000 ns/op
+# Warmup Iteration  28: 1286100.000 ns/op
+# Warmup Iteration  29: 1284300.000 ns/op
+# Warmup Iteration  30: 1248400.000 ns/op
+# Warmup Iteration  31: 1225400.000 ns/op
+# Warmup Iteration  32: 1223600.000 ns/op
+# Warmup Iteration  33: 1248100.000 ns/op
+# Warmup Iteration  34: 1296300.000 ns/op
+# Warmup Iteration  35: 1281900.000 ns/op
+# Warmup Iteration  36: 1285600.000 ns/op
+# Warmup Iteration  37: 1232000.000 ns/op
+# Warmup Iteration  38: 1261500.000 ns/op
+# Warmup Iteration  39: 1271200.000 ns/op
+# Warmup Iteration  40: 1243200.000 ns/op
+# Warmup Iteration  41: 1229300.000 ns/op
+# Warmup Iteration  42: 1277100.000 ns/op
+# Warmup Iteration  43: 1239600.000 ns/op
+# Warmup Iteration  44: 1233100.000 ns/op
+# Warmup Iteration  45: 1211000.000 ns/op
+# Warmup Iteration  46: 1426700.000 ns/op
+# Warmup Iteration  47: 1320900.000 ns/op
+# Warmup Iteration  48: 1241400.000 ns/op
+# Warmup Iteration  49: 1614600.000 ns/op
+# Warmup Iteration  50: 1268600.000 ns/op
+# Warmup Iteration  51: 1267900.000 ns/op
+# Warmup Iteration  52: 1235700.000 ns/op
+# Warmup Iteration  53: 1222200.000 ns/op
+# Warmup Iteration  54: 1208800.000 ns/op
+# Warmup Iteration  55: 1209500.000 ns/op
+# Warmup Iteration  56: 1311500.000 ns/op
+# Warmup Iteration  57: 1207000.000 ns/op
+# Warmup Iteration  58: 1255800.000 ns/op
+# Warmup Iteration  59: 1224500.000 ns/op
+# Warmup Iteration  60: 1271000.000 ns/op
+# Warmup Iteration  61: 1724300.000 ns/op
+# Warmup Iteration  62: 1232500.000 ns/op
+# Warmup Iteration  63: 1256400.000 ns/op
+# Warmup Iteration  64: 1223500.000 ns/op
+# Warmup Iteration  65: 2004500.000 ns/op
+# Warmup Iteration  66: 1240900.000 ns/op
+# Warmup Iteration  67: 1354900.000 ns/op
+# Warmup Iteration  68: 1247900.000 ns/op
+# Warmup Iteration  69: 1213500.000 ns/op
+# Warmup Iteration  70: 1215000.000 ns/op
+# Warmup Iteration  71: 1210700.000 ns/op
+# Warmup Iteration  72: 1212100.000 ns/op
+# Warmup Iteration  73: 1201400.000 ns/op
+# Warmup Iteration  74: 1231700.000 ns/op
+# Warmup Iteration  75: 1234400.000 ns/op
+# Warmup Iteration  76: 1209500.000 ns/op
+# Warmup Iteration  77: 1235900.000 ns/op
+# Warmup Iteration  78: 1247100.000 ns/op
+# Warmup Iteration  79: 1234800.000 ns/op
+# Warmup Iteration  80: 1226200.000 ns/op
+# Warmup Iteration  81: 1249900.000 ns/op
+# Warmup Iteration  82: 1224300.000 ns/op
+# Warmup Iteration  83: 1216100.000 ns/op
+# Warmup Iteration  84: 1216200.000 ns/op
+# Warmup Iteration  85: 1228600.000 ns/op
+# Warmup Iteration  86: 1246500.000 ns/op
+# Warmup Iteration  87: 1206400.000 ns/op
+# Warmup Iteration  88: 1329400.000 ns/op
+# Warmup Iteration  89: 1233800.000 ns/op
+# Warmup Iteration  90: 1242100.000 ns/op
+# Warmup Iteration  91: 1198700.000 ns/op
+# Warmup Iteration  92: 1192900.000 ns/op
+# Warmup Iteration  93: 1297300.000 ns/op
+# Warmup Iteration  94: 1207100.000 ns/op
+# Warmup Iteration  95: 1183300.000 ns/op
+# Warmup Iteration  96: 1261600.000 ns/op
+# Warmup Iteration  97: 1226500.000 ns/op
+# Warmup Iteration  98: 1270100.000 ns/op
+# Warmup Iteration  99: 1248600.000 ns/op
+# Warmup Iteration 100: 1252000.000 ns/op
+Iteration   1: 1217800.000 ns/op
+Iteration   2: 1261700.000 ns/op
+Iteration   3: 1220600.000 ns/op
+Iteration   4: 1191700.000 ns/op
+Iteration   5: 1205800.000 ns/op
+Iteration   6: 1210400.000 ns/op
+Iteration   7: 1241100.000 ns/op
+Iteration   8: 1194900.000 ns/op
+Iteration   9: 1183600.000 ns/op
+Iteration  10: 1268000.000 ns/op
+Iteration  11: 1243800.000 ns/op
+Iteration  12: 1233300.000 ns/op
+Iteration  13: 1214600.000 ns/op
+Iteration  14: 1208700.000 ns/op
+Iteration  15: 1186800.000 ns/op
+Iteration  16: 1196600.000 ns/op
+Iteration  17: 1211600.000 ns/op
+Iteration  18: 1271300.000 ns/op
+Iteration  19: 1239600.000 ns/op
+Iteration  20: 1268800.000 ns/op
+Iteration  21: 1274900.000 ns/op
+Iteration  22: 1679600.000 ns/op
+Iteration  23: 1218500.000 ns/op
+Iteration  24: 1222500.000 ns/op
+Iteration  25: 1203000.000 ns/op
+Iteration  26: 1274400.000 ns/op
+Iteration  27: 1232400.000 ns/op
+Iteration  28: 1256900.000 ns/op
+Iteration  29: 1218300.000 ns/op
+Iteration  30: 1239000.000 ns/op
+
+# Run progress: 80.00% complete, ETA 00:00:00
+# Fork: 5 of 5
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/C:/Users/HACOM/Downloads/mergesort-cutoff-lab/target/benchmarks.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: 5958500.000 ns/op
+# Warmup Iteration   2: 3086400.000 ns/op
+# Warmup Iteration   3: 2137800.000 ns/op
+# Warmup Iteration   4: 2690900.000 ns/op
+# Warmup Iteration   5: 2095800.000 ns/op
+# Warmup Iteration   6: 2063400.000 ns/op
+# Warmup Iteration   7: 3577600.000 ns/op
+# Warmup Iteration   8: 4882200.000 ns/op
+# Warmup Iteration   9: 4831900.000 ns/op
+# Warmup Iteration  10: 5251300.000 ns/op
+# Warmup Iteration  11: 4876700.000 ns/op
+# Warmup Iteration  12: 4819500.000 ns/op
+# Warmup Iteration  13: 4986900.000 ns/op
+# Warmup Iteration  14: 4917000.000 ns/op
+# Warmup Iteration  15: 5013900.000 ns/op
+# Warmup Iteration  16: 5467400.000 ns/op
+# Warmup Iteration  17: 4874100.000 ns/op
+# Warmup Iteration  18: 4970900.000 ns/op
+# Warmup Iteration  19: 4981100.000 ns/op
+# Warmup Iteration  20: 3156100.000 ns/op
+# Warmup Iteration  21: 3215900.000 ns/op
+# Warmup Iteration  22: 3139800.000 ns/op
+# Warmup Iteration  23: 3160900.000 ns/op
+# Warmup Iteration  24: 1369800.000 ns/op
+# Warmup Iteration  25: 1216100.000 ns/op
+# Warmup Iteration  26: 1231700.000 ns/op
+# Warmup Iteration  27: 1234900.000 ns/op
+# Warmup Iteration  28: 1204600.000 ns/op
+# Warmup Iteration  29: 1246100.000 ns/op
+# Warmup Iteration  30: 1644100.000 ns/op
+# Warmup Iteration  31: 1222600.000 ns/op
+# Warmup Iteration  32: 1228300.000 ns/op
+# Warmup Iteration  33: 1192400.000 ns/op
+# Warmup Iteration  34: 1226000.000 ns/op
+# Warmup Iteration  35: 1233800.000 ns/op
+# Warmup Iteration  36: 1224600.000 ns/op
+# Warmup Iteration  37: 1217800.000 ns/op
+# Warmup Iteration  38: 1185800.000 ns/op
+# Warmup Iteration  39: 1294600.000 ns/op
+# Warmup Iteration  40: 1189000.000 ns/op
+# Warmup Iteration  41: 1222600.000 ns/op
+# Warmup Iteration  42: 1266200.000 ns/op
+# Warmup Iteration  43: 1232500.000 ns/op
+# Warmup Iteration  44: 1267600.000 ns/op
+# Warmup Iteration  45: 1228200.000 ns/op
+# Warmup Iteration  46: 1264800.000 ns/op
+# Warmup Iteration  47: 1223400.000 ns/op
+# Warmup Iteration  48: 1226100.000 ns/op
+# Warmup Iteration  49: 1260200.000 ns/op
+# Warmup Iteration  50: 1279400.000 ns/op
+# Warmup Iteration  51: 1231900.000 ns/op
+# Warmup Iteration  52: 1257100.000 ns/op
+# Warmup Iteration  53: 1253200.000 ns/op
+# Warmup Iteration  54: 1206500.000 ns/op
+# Warmup Iteration  55: 1190200.000 ns/op
+# Warmup Iteration  56: 1220100.000 ns/op
+# Warmup Iteration  57: 1203000.000 ns/op
+# Warmup Iteration  58: 1242700.000 ns/op
+# Warmup Iteration  59: 1209000.000 ns/op
+# Warmup Iteration  60: 1183400.000 ns/op
+# Warmup Iteration  61: 1338800.000 ns/op
+# Warmup Iteration  62: 1254700.000 ns/op
+# Warmup Iteration  63: 1265200.000 ns/op
+# Warmup Iteration  64: 1237900.000 ns/op
+# Warmup Iteration  65: 1232800.000 ns/op
+# Warmup Iteration  66: 1264500.000 ns/op
+# Warmup Iteration  67: 1207800.000 ns/op
+# Warmup Iteration  68: 1225800.000 ns/op
+# Warmup Iteration  69: 1260700.000 ns/op
+# Warmup Iteration  70: 1264200.000 ns/op
+# Warmup Iteration  71: 1271400.000 ns/op
+# Warmup Iteration  72: 1291800.000 ns/op
+# Warmup Iteration  73: 1236900.000 ns/op
+# Warmup Iteration  74: 1210100.000 ns/op
+# Warmup Iteration  75: 1226000.000 ns/op
+# Warmup Iteration  76: 1220100.000 ns/op
+# Warmup Iteration  77: 1253000.000 ns/op
+# Warmup Iteration  78: 1228600.000 ns/op
+# Warmup Iteration  79: 1229400.000 ns/op
+# Warmup Iteration  80: 1253200.000 ns/op
+# Warmup Iteration  81: 1187000.000 ns/op
+# Warmup Iteration  82: 1263700.000 ns/op
+# Warmup Iteration  83: 1266300.000 ns/op
+# Warmup Iteration  84: 1224000.000 ns/op
+# Warmup Iteration  85: 1242900.000 ns/op
+# Warmup Iteration  86: 1203000.000 ns/op
+# Warmup Iteration  87: 1216200.000 ns/op
+# Warmup Iteration  88: 1225200.000 ns/op
+# Warmup Iteration  89: 1208900.000 ns/op
+# Warmup Iteration  90: 1232200.000 ns/op
+# Warmup Iteration  91: 1245300.000 ns/op
+# Warmup Iteration  92: 1244700.000 ns/op
+# Warmup Iteration  93: 1225800.000 ns/op
+# Warmup Iteration  94: 1312000.000 ns/op
+# Warmup Iteration  95: 1203400.000 ns/op
+# Warmup Iteration  96: 1224000.000 ns/op
+# Warmup Iteration  97: 1225800.000 ns/op
+# Warmup Iteration  98: 1222500.000 ns/op
+# Warmup Iteration  99: 1216000.000 ns/op
+# Warmup Iteration 100: 1216000.000 ns/op
+Iteration   1: 1213400.000 ns/op
+Iteration   2: 1226200.000 ns/op
+Iteration   3: 1236100.000 ns/op
+Iteration   4: 1219400.000 ns/op
+Iteration   5: 1379700.000 ns/op
+Iteration   6: 1299100.000 ns/op
+Iteration   7: 1333500.000 ns/op
+Iteration   8: 1230400.000 ns/op
+Iteration   9: 1228900.000 ns/op
+Iteration  10: 1285000.000 ns/op
+Iteration  11: 1266600.000 ns/op
+Iteration  12: 1250500.000 ns/op
+Iteration  13: 1212900.000 ns/op
+Iteration  14: 1297900.000 ns/op
+Iteration  15: 1334400.000 ns/op
+Iteration  16: 1209700.000 ns/op
+Iteration  17: 1231700.000 ns/op
+Iteration  18: 1231800.000 ns/op
+Iteration  19: 1285800.000 ns/op
+Iteration  20: 1327400.000 ns/op
+Iteration  21: 1184500.000 ns/op
+Iteration  22: 1224700.000 ns/op
+Iteration  23: 1223700.000 ns/op
+Iteration  24: 1241200.000 ns/op
+Iteration  25: 1327700.000 ns/op
+Iteration  26: 1205200.000 ns/op
+Iteration  27: 1225200.000 ns/op
+Iteration  28: 1387700.000 ns/op
+Iteration  29: 1248800.000 ns/op
+Iteration  30: 1257500.000 ns/op
+
+
+Result "study.jmh.SortBenchmark.sort":
+  N = 150
+  mean = 1255890.667 ±(99.9%) 19352.187 ns/op
+
+  Histogram, ns/op:
+    [1100000.000, 1150000.000) = 0 
+    [1150000.000, 1200000.000) = 12 
+    [1200000.000, 1250000.000) = 68 
+    [1250000.000, 1300000.000) = 53 
+    [1300000.000, 1350000.000) = 11 
+    [1350000.000, 1400000.000) = 2 
+    [1400000.000, 1450000.000) = 1 
+    [1450000.000, 1500000.000) = 1 
+    [1500000.000, 1550000.000) = 0 
+    [1550000.000, 1600000.000) = 0 
+    [1600000.000, 1650000.000) = 0 
+    [1650000.000, 1700000.000) = 1 
+    [1700000.000, 1750000.000) = 0 
+
+  Percentiles, ns/op:
+      p(0.0000) = 1178200.000 ns/op
+     p(50.0000) = 1243400.000 ns/op
+     p(90.0000) = 1306470.000 ns/op
+     p(95.0000) = 1333905.000 ns/op
+     p(99.0000) = 1717918.000 ns/op
+     p(99.9000) = 1757800.000 ns/op
+     p(99.9900) = 1757800.000 ns/op
+     p(99.9990) = 1757800.000 ns/op
+     p(99.9999) = 1757800.000 ns/op
+    p(100.0000) = 1757800.000 ns/op
+
+
+# Run complete. Total time: 00:00:02
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark           (cutoff)                                           (dataDir)         (dataset)  Mode  Cnt        Score       Error  Units
+SortBenchmark.sort        40  C:\Users\HACOM\Downloads\mergesort-cutoff-lab\data  random_n10000_s0    ss  150  1255890.667 ± 19352.187  ns/op
+
+Benchmark result is saved to results\grid-20261109-095145\jmh\0076_random_n10000_s0_c40.json
